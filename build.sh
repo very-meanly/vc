@@ -16,3 +16,12 @@ npm install
 
 sudo -u postgres createuser -d vc -P
 sudo -u postgres createdb -O vc vc
+
+sudo cp nginx.unsecure.conf /etc/nginx/sites-enabled/vc.conf
+sudo cp supervisor.conf /etc/supervisor/conf.d/vc.conf
+
+sudo systemctl enable nginx
+sudo systemctl start nginx
+
+sudo systemctl enable supervisor
+sudo systemctl start supervisor
